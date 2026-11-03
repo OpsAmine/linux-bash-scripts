@@ -1,4 +1,4 @@
-# linux-bash-scripts
+# handy-bash-scripts
 
 Simple Bash scripts to automate common Linux sysadmin tasks. Each script is self-contained, has a documented header, checks its prerequisites before doing anything, and stops on the first error.
 
