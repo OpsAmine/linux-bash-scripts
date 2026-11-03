@@ -13,7 +13,7 @@ Simple Bash scripts to automate common Linux sysadmin tasks. Each script is self
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-username>/linux-bash-scripts.git
+git clone https://github.com/boursam/linux-bash-scripts.git
 cd handy-bash-scripts
 cd scripts/
 chmod +x *.sh
