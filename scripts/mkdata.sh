@@ -27,14 +27,9 @@
 #   Mount point  : /data
 #   Filesystem   : xfs
 #
-# Requirements:
-#   - Root privileges (run as root or with sudo)
-#   - Packages: parted, lvm2, xfsprogs, util-linux
-#   - A dedicated, unused disk (ALL DATA ON IT WILL BE DESTROYED)
-#
 # Usage:
+#   chmod +x mkdata.sh
 #   sudo ./mkdata.sh
-#   (make it executable first with: chmod +x mkdata.sh)
 #
 # Notes:
 #   - For NVMe disks, change PARTITION to "${TARGET_DISK}p1"
