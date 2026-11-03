@@ -28,13 +28,8 @@
 #   DAEMON_JSON : /etc/docker/daemon.json
 #
 # Usage:
+#   chmod +x mvdocker.sh
 #   sudo ./mvdocker.sh
-#   (make it executable first with: chmod +x mvdocker.sh)
-#
-# Requirements:
-#   - Root privileges (run as root or with sudo)
-#   - Docker installed (see getdocker.sh) and systemd
-#   - Enough free space on the target (see mkdata.sh to prepare /data)
 #
 # Notes:
 #   - Running containers are stopped during the move
