@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #==============================================================================
-# Script Name : getdocker.sh
+# Script Name : docker.sh
 # Description : Installs Docker Engine from Docker's official repositories,
 #               automatically detecting the Linux distribution family
 #               (Debian/Ubuntu or RHEL/Rocky/Fedora) and using the matching
@@ -40,7 +40,7 @@
 #
 # Usage:
 #   sudo ./getdocker.sh
-#   (make it executable first with: chmod +x getdocker.sh)
+#   (make it executable first with: chmod +x docker.sh)
 #
 # Notes:
 #   - The script stops on the first error (set -euo pipefail)
