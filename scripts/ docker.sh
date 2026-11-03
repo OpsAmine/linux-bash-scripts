@@ -34,8 +34,8 @@
 #   possible; otherwise the script exits with an error.
 #
 # Usage:
+#   chmod +x docker.sh
 #   sudo ./docker.sh
-#   (make it executable first with: chmod +x docker.sh)
 #
 # Notes:
 #   - The script stops on the first error (set -euo pipefail)
