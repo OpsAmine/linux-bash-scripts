@@ -33,13 +33,8 @@
 #   Fedora, Oracle Linux. Other distros are matched through ID_LIKE when
 #   possible; otherwise the script exits with an error.
 #
-# Requirements:
-#   - Root privileges (run as root or with sudo)
-#   - Internet access to download.docker.com
-#   - systemd
-#
 # Usage:
-#   sudo ./getdocker.sh
+#   sudo ./docker.sh
 #   (make it executable first with: chmod +x docker.sh)
 #
 # Notes:
