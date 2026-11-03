@@ -24,12 +24,3 @@ Read the header at the top of each script for its options, requirements and exit
 
 > [!WARNING]
 > - Review the variables and content of each script and test on a non-production machine first.
-
-## Contributing
-
-Issues and pull requests are welcome. When adding a script, please:
-
-- Start it with a header comment (name, description, usage, requirements, exit codes)
-- Use `set -euo pipefail`
-- Check for root and for required commands before changing anything
-- Add it to the table in this README
