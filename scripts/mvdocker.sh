@@ -15,7 +15,7 @@
 #        - data-root set to the target directory
 #        - overlay2 storage driver
 #        - json-file log rotation (10m x 3 files, compressed)
-#        - live-restore, no-new-privileges and nofile ulimits
+#        - live-restore, and nofile ulimits
 #        - an insecure registry entry (edit it for your environment)
 #   5. Syncs the source directory to the target with rsync (hard links,
 #      ACLs, xattrs, sparse files and numeric ownership preserved)
@@ -119,7 +119,6 @@ cat > "$DAEMON_JSON" << EOF
                 "compress": "true"
         },
         "live-restore": true,
-        "no-new-privileges": true,
         "default-ulimits": {
             "nofile": {
                 "Name": "nofile",
