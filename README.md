@@ -20,7 +20,5 @@ chmod +x *.sh
 sudo ./docker.sh
 ```
 
-Read the header at the top of each script for its options, requirements and exit codes before running it.
-
 > [!WARNING]
 > - Review the variables and content of each script and test on a non-production machine first.
