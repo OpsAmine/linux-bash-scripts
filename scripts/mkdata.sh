@@ -32,29 +32,39 @@ echo "Verifying existance of necessary packages..."
 
 for cmd in parted pvcreate vgcreate lvcreate mkfs.xfs blkid partprobe; do
     if ! command -v "$cmd" >/dev/null 2>&1; then
-        echo "ERROR: Required command '$cmd' not found (install lvm2, parted)." >&2
-        if [ "$cmd" = "lvm2" ]; then
-        echo "Installing missing $cmd package"
+        echo "ERROR: Required command '$cmd' not found." >&2
+        
+        case "$cmd" in
+            pvcreate|vgcreate|lvcreate)
+                pkg="lvm2"
+                ;;
+            parted)
+                pkg="parted"
+                ;;
+            mkfs.xfs)
+                pkg="xfsprogs"
+                ;;
+            blkid|partprobe)
+                pkg="util-linux"
+                ;;
+            *)
+                pkg=""
+                ;;
+        esac
+
+        if [ -n "$pkg" ]; then
+            echo "Attempting to install missing package: $pkg"
             if command -v dnf >/dev/null 2>&1; then
-                dnf install -y lvm2
+                dnf install -y "$pkg"
             elif command -v apt >/dev/null 2>&1; then
                 apt update -y
-                apt install -y lvm2
+                apt install -y "$pkg"
             else
-                echo "ERROR: No supported package manager found to install $cmd" >&2
+                echo "ERROR: No supported package manager found to install $pkg" >&2
             fi
-        elif [ $cmd = "parted" ]; then
-            if command -v dnf >/dev/null 2>&1; then
-                    dnf install -y parted
-            elif command -v apt >/dev/null 2>&1; then
-                apt update
-                apt install -y parted
-            else
-                echo "ERROR: No supported package manager found to install $cmd" >&2
-            fi
+        else
+            echo "ERROR: Manual installation required for command '$cmd'." >&2
         fi
-    else 
-        echo "Necessary packages already exist. Proceeding wih setup..."
     fi
 done
 
