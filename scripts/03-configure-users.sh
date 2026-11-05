@@ -2,6 +2,7 @@
 
 # Provision a local user with a home directory, set a default password, 
 # and grant administrative privileges via sudo or wheel based on the OS.
+# TO USE : ./03-configure-users.sh <USERNAME>
 
 set -euo pipefail
 
@@ -10,14 +11,12 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-USERNAME="vortex"
-PASSWORD="password"
+USERNAME="$1"
 
 echo "Creating the user with a default home directory"
 useradd -m "$USERNAME"
 
-echo "Setting the password non-interactively using chpasswd"
-echo "$USERNAME:$PASSWORD" | chpasswd
+passwd "$USERNAME"
 
 . /etc/os-release
 OS_ID="${ID,,}"
