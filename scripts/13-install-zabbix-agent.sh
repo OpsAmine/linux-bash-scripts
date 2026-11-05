@@ -41,7 +41,7 @@ case "$OS_ID" in
             sed -i '/^\[epel\]$/a excludepkgs=zabbix*' "$EPEL_REPO"
         fi
 
-        RPM_URL="https://repo.zabbix.com/zabbix/${ZABBIX_VERSION}/rhel/${OS_MAJOR}/x86_64/zabbix-release-latest-${ZABBIX_VERSION}.el${OS_MAJOR}.noarch.rpm"
+        RPM_URL="https://repo.zabbix.com/zabbix/${ZABBIX_VERSION}/${OS_ID}/${OS_MAJOR}/x86_64/zabbix-release-latest-${ZABBIX_VERSION}.el${OS_MAJOR}.noarch.rpm"
 
         echo "-> Installing Zabbix repo package: $RPM_URL"
         rpm -Uvh "$RPM_URL"
