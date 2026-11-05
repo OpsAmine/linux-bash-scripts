@@ -32,7 +32,7 @@ case "$OS_ID" in
         ;;
     rhel|rocky|almalinux|centos)
         dnf install -y epel-release
-        dnf install -y ansible
+        dnf install -y ansible-core
         ;;
     *)
         echo "ERROR: Unsupported OS ($OS_ID)."
