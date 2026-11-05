@@ -38,7 +38,9 @@ scripts/
 ├── 18-check-server.sh
 ├── 19-backup-system.sh
 ├── 20-backup-file.sh
-└── 21-clean-system.sh
+├─  21-extract-backup.sh
+└── 22-clean-system.sh
+
 ```
 
 ---
@@ -94,7 +96,10 @@ scripts/
 | :--------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- |
 | [`19-backup-system.sh`](scripts/19-backup-system.sh) | Backs up crucial configuration files (`/etc/fstab`, SSH, network, Docker, firewall rules) into a compressed, timestamped tarball archive. |
 | [`20-backup-file.sh`](scripts/20-backup-file.sh)     | Takes a target file or folder input path and compresses it into a target backup directory path.                                           |
-| [`21-clean-system.sh`](scripts/21-clean-system.sh)   | Cleans package manager caches (APT/DNF), vacuums systemd logs older than 7 days, and purges stale `/tmp` items (supports `--dry-run`).    |
+| [`21-extract-backup.sh`](scripts/21-extract-backup.sh)     | Takes a target backup path and extracts it into a target directory path.                                           |
+| [`22-clean-system.sh`](scripts/22-clean-system.sh)   | Cleans package manager caches (APT/DNF), vacuums systemd logs older than 7 days, and purges stale `/tmp` items (supports `--dry-run`).    |
+
+
 
 ---
 
@@ -130,7 +135,7 @@ sudo ./09-configure-docker.sh
 sudo ./15-monitor-system.sh
 
 # Run system maintenance in Dry-Run mode
-sudo ./21-clean-system.sh --dry-run
+sudo ./22-clean-system.sh --dry-run
 ```
 
 ---
