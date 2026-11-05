@@ -4,10 +4,8 @@
 # bz2, xz) into a target destination directory, verifying the archive
 # exists and detecting the format from its file extension.
 # TO USE : 1. Archive:  ./21-extract-file.sh /data/backups/docker-2026-11-05.tar.gz /tmp/restore
-#          2. Root needed only if the destination requires it (e.g. /etc):
-#             sudo ./21-extract-file.sh /data/backups/fstab-2026-11-05.tar.gz /etc
 
-set -e
+set -euo pipefail
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 <archive_file> <destination_directory>"
