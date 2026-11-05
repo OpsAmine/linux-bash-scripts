@@ -2,14 +2,15 @@
 
 # Automate raw block storage provisioning: create GPT partition tables, 
 # configure LVM volumes, format with XFS, and bind persistently to /data.
+# TO USE: ./02-create-lvm.sh <Disk_Name> <Mount_Point> <Volume_Group_Name> <Logical_Volume_Name>
 
 set -euo pipefail
 
-TARGET_DISK="/dev/sdb"
+TARGET_DISK="$1"
 PARTITION="${TARGET_DISK}1"
-MOUNT_POINT="/data"
-VG_NAME="vg_data"
-LV_NAME="lv_data"
+MOUNT_POINT="$2"
+VG_NAME="$3"
+LV_NAME="$4"
 TARGET="/dev/$VG_NAME/$LV_NAME"
 
 # Verify if script is run as root or with sudo
