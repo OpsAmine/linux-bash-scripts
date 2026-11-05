@@ -2,11 +2,12 @@
 
 # Enforce a static hostname change and update the /etc/hosts mapping accordingly.
 # Requires root privileges to modify system hostname and host files.
+# TO USE : ./01-configure-hostname.sh <Server-Name> <IP-Address>
 
 set -euo pipefail
 
-NEW_HOSTNAME="srv-test-001"
-IP_ADDRESS="20.170.10.1"
+NEW_HOSTNAME="$1"
+IP_ADDRESS="$2"
 CONFIG_FILE="/etc/hosts"
 
 echo "Checking if script is executed by root"
