@@ -109,7 +109,7 @@ scripts/
 
 ```bash
 # Clone repository
-git clone https://github.com/boursam/linux-bash-scripts.git
+git clone https://github.com/OpsAmine/linux-bash-scripts.git
 cd linux-bash-scripts/scripts
 
 # Make scripts executable
