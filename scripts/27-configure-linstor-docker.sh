@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Validates required LINSTOR packages, generates the Docker volume plugin configuration,
 # and installs the Linbit Docker volume plugin.
