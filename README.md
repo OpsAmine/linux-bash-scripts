@@ -4,7 +4,7 @@
 
 # 💻 Linux Server Automation
 
-Welcome to the **Linux Server Automation** repository! This repository offers a collection of Bash scripts engineered to automate Linux setup, infrastructure, storage management, container runtime provisioning, monitoring, and routine maintenance across **Debian/Ubuntu** and **RHEL/Rocky/AlmaLinux/Fedora** environments.
+Welcome to the **Linux Server Automation** repository! This repository offers a collection of Bash scripts made to automate Linux setup, infrastructure, storage management, container runtime provisioning, monitoring, and routine maintenance across **Debian/Ubuntu** and **RHEL/Rocky/AlmaLinux/Fedora** environments, and other tasks.
 
 
 ## 💡 Key Features
