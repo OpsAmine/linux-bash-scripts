@@ -2,7 +2,6 @@
 
 Welcome to the **Linux System Administration Scripts** repository! This repository offers a collection of Bash scripts engineered to automate Linux setup, infrastructure, storage management, container runtime provisioning, monitoring, and routine maintenance across **Debian/Ubuntu** and **RHEL/Rocky/AlmaLinux/Fedora** environments.
 
----
 
 ## 💡 Key Features
 
@@ -10,7 +9,6 @@ Welcome to the **Linux System Administration Scripts** repository! This reposito
 - Integrated privilege checks (`EUID -ne 0`) prevent partial or unauthorized execution state mutations.
 - Dynamically parses `/etc/os-release` to resolve package management dependencies across APT and DNF systems.
 
----
 
 ## 📚 Directory & Script Index
 
@@ -48,7 +46,6 @@ scripts/
 └── 27-configure-linstor-docker.sh
 ```
 
----
 
 ## 📝 Module Overview
 
@@ -116,7 +113,6 @@ scripts/
 | [`26-configure-linstor-cluster.sh`](scripts/26-configure-linstor-cluster.sh)             | Checks connectivity to all nodes, registers the controller (combined) and satellites, and creates an LVM storage pool on each node. Skips nodes and pools that already exist. Run on the controller only. |
 | [`27-configure-linstor-docker.sh`](scripts/27-configure-linstor-docker.sh)               | Verifies the required packages, writes `/etc/linstor/docker-volume.conf` (storage pool, filesystem, size, replica count, controller address) and installs the LINBIT Docker volume plugin.                  |
 
----
 
 ## 🚩 Getting Started
 
