@@ -20,7 +20,6 @@ All utility scripts are organized within the `scripts/` directory following a nu
 
 ```text
 scripts/
-scripts/
 ├── 01-configure-hostname.sh
 ├── 02-create-lvm.sh
 ├── 03-configure-users.sh
