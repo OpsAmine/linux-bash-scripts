@@ -2,9 +2,9 @@
   <img src="assets/banner.svg" alt="Linux Server Automation" width="100%">
 </p>
 
-# 💻 Linux Automation Scripts
+# 💻 Linux Server Automation
 
-Welcome to the **Linux System Administration Scripts** repository! This repository offers a collection of Bash scripts engineered to automate Linux setup, infrastructure, storage management, container runtime provisioning, monitoring, and routine maintenance across **Debian/Ubuntu** and **RHEL/Rocky/AlmaLinux/Fedora** environments.
+Welcome to the **Linux Server Automation** repository! This repository offers a collection of Bash scripts engineered to automate Linux setup, infrastructure, storage management, container runtime provisioning, monitoring, and routine maintenance across **Debian/Ubuntu** and **RHEL/Rocky/AlmaLinux/Fedora** environments.
 
 
 ## 💡 Key Features
