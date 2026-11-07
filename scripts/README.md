@@ -12,5 +12,5 @@ All scripts must use LF line endings (not CRLF), if you receive an error when tr
 or on all scripts:
 
 ```bash
-    sed -i 's/\r$//' scripts/*
+    sed -i 's/\r$//' *.sh
 ```
