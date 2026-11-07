@@ -153,7 +153,5 @@ sudo ./15-monitor-system.sh
 sudo ./22-clean-system.sh --dry-run
 ```
 
----
-
-> [!WARNING]
-> Always inspect variables (such as target paths, IP ranges, ports, and default usernames) prior to running on production systems. Always test configurations in staging environments before applying for production-destined environments.
+> [!CAUTION]
+> Always inspect variables (such as target paths, IP, ports, and default usernames) prior to running on production systems. Always test configurations in staging environments before applying for production-destined environments.
