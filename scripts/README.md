@@ -1,8 +1,8 @@
-## ./scripts
+## ℹ️ About
  
 Each script here does one job on a Linux server and does it in the open with no hidden dependencies and no silent fallbacks. 
 
-## Troubleshooting: CRLF Line Endings
+## 🚨 Troubleshooting: CRLF Line Endings
 
 All scripts must use LF line endings (not CRLF), if you receive an error when trying to execute a script, execute:
 ```bash
