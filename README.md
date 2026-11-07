@@ -99,7 +99,17 @@ scripts/
 | [`21-extract-backup.sh`](scripts/21-extract-backup.sh)     | Takes a target backup path and extracts it into a target directory path.                                           |
 | [`22-clean-system.sh`](scripts/22-clean-system.sh)   | Cleans package manager caches (APT/DNF), vacuums systemd logs older than 7 days, and purges stale `/tmp` items (supports `--dry-run`).    |
 
+### 7. LINSTOR Cluster (Replicated Storage)
 
+**LINSTOR** and **DRBD** are open-source and software-defined storage **(SDS)** solutions that deliver a high available and replicated block storage across distributed Linux cluster environments.
+
+| Script                                                                                       | Purpose & Description                                                                                                                                                                                       |
+| :------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`23-linstor-install-controller.sh`](scripts/23-linstor-install-controller.sh)               | Adds the LINBIT DRBD9 PPA and installs DRBD, `linstor-controller`, `linstor-satellite` and `linstor-client`, then enables and verifies the services. Run on the controller host only.                       |
+| [`24-linstor-install-satellite.sh`](scripts/24-linstor-install-satellite.sh)                 | Adds the LINBIT DRBD9 PPA and installs DRBD and `linstor-satellite`, then enables and verifies the service. Run on every satellite (storage) host.                                                         |
+| [`25-linstor-create-lvm.sh`](scripts/25-linstor-create-lvm.sh)                               | Checks that the target disk exists and is not mounted, then creates the `linstor_vg` volume group on it. Aborts if the group already exists. Run on every host that stores data.                           |
+| [`26-linstor-configure-cluster.sh`](scripts/26-linstor-configure-cluster.sh)                 | Checks connectivity to all nodes, registers the controller (combined) and satellites, and creates an LVM storage pool on each node. Skips nodes and pools that already exist. Run on the controller only. |
+| [`27-linstor-configure-docker.sh`](scripts/27-linstor-configure-docker.sh)                   | Verifies the required packages, writes `/etc/linstor/docker-volume.conf` (storage pool, filesystem, size, replica count, controller address) and installs the LINBIT Docker volume plugin.                  |
 
 ---
 
