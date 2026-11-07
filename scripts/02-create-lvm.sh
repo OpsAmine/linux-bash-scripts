@@ -80,6 +80,13 @@ if vgs --noheadings -o vg_name 2>/dev/null | grep -qw "$VG_NAME"; then
     exit 1
 fi
 
+echo "Verifying if $LV_NAME already exists..."
+
+if vgs --noheadings -o lv_name 2>/dev/null | grep -qw "$LV_NAME"; then
+    echo "ERROR: Logical volume $LV_NAME already exists." >&2
+    exit 1
+fi
+
 echo "Running Partitioning Setup..."
 
 echo "Step 1: Creating GPT partition table"
