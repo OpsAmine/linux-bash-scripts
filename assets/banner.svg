@@ -27,7 +27,7 @@
   <!-- Title -->
   <text x="600" y="150" text-anchor="middle" filter="url(#soft)"
         font-family="'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif"
-        font-size="72" font-weight="700" fill="#FFFFFF">Linux Automation Scripts</text>
+        font-size="72" font-weight="700" fill="#FFFFFF">Linux Server Automation</text>
 
   <!-- Accent line -->
   <rect x="540" y="176" width="120" height="5" rx="2.5" fill="#FDE68A"/>
