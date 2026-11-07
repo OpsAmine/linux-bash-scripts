@@ -1,13 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Validates required LINSTOR packages, generates the Docker volume plugin configuration, 
+# Validates required LINSTOR packages, generates the Docker volume plugin configuration,
 # and installs the Linbit Docker volume plugin.
 
 set -euo pipefail
 
 LINSTOR_PATH="/etc/linstor"
 VOLUME_FILE="docker-volume.conf"
-DOCKER_PLUGIN="linbit/linbit-docker-volume"
+DOCKER_PLUGIN="linbit/linbit-docker-volume:latest"
 
 if [ "$EUID" -ne 0 ]; then
     echo "ERROR: Please run script as root, or with sudo."
@@ -24,7 +24,8 @@ DEFAULT_REPLICAS_NUM="3"
 CONTROLLER_IP="X.X.X.X"
 CONTROLLER="linstor://$CONTROLLER_IP"
 
-echo "==> Verifying required packages..."
+echo "Verifying required packages"
+
 for pkg in "${PACKAGES[@]}"; do
     if ! dpkg -s "$pkg" >/dev/null 2>&1; then
         echo "ERROR: Package '$pkg' is not installed. Please install it first."
@@ -32,7 +33,8 @@ for pkg in "${PACKAGES[@]}"; do
     fi
 done
 
-echo "[1/2] Creating Docker's LINSTOR configuration..."
+echo "Creating Docker's LINSTOR configuration"
+
 if [ ! -d "$LINSTOR_PATH" ]; then
     echo "Creating directory: $LINSTOR_PATH"
     mkdir -p "$LINSTOR_PATH"
@@ -47,7 +49,8 @@ replicas = $DEFAULT_REPLICAS_NUM
 controllers = $CONTROLLER
 EOF
 
-echo "[2/2] Installing Docker Plugin..."
+echo "Installing Docker Plugin"
+
 if command -v docker >/dev/null 2>&1; then
     if docker plugin inspect "$DOCKER_PLUGIN" >/dev/null 2>&1; then
         echo "Docker plugin '$DOCKER_PLUGIN' is already installed."
@@ -60,4 +63,4 @@ else
 fi
 
 echo ""
-echo "[INFO] Script execution completed."
+echo "[INFO] Script execution completed successfully."
