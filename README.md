@@ -1,10 +1,10 @@
 # 💻 Linux System Administration Scripts
 
-A collection of Bash scripts engineered to automate Linux setup, infrastructure, storage management, container runtime provisioning, monitoring, and routine maintenance across **Debian/Ubuntu** and **RHEL/Rocky/AlmaLinux/Fedora** environments.
+Welcome to the **Linux System Administration Scripts** repository! This repository offers a collection of Bash scripts engineered to automate Linux setup, infrastructure, storage management, container runtime provisioning, monitoring, and routine maintenance across **Debian/Ubuntu** and **RHEL/Rocky/AlmaLinux/Fedora** environments.
 
 ---
 
-## Key Features
+## 💡 Key Features
 
 - Each script utilizes `set -euo pipefail` to ensure immediate termination on errors, unhandled unbound variables, or failing pipeline stages.
 - Integrated privilege checks (`EUID -ne 0`) prevent partial or unauthorized execution state mutations.
@@ -12,7 +12,7 @@ A collection of Bash scripts engineered to automate Linux setup, infrastructure,
 
 ---
 
-## Directory & Script Index
+## 📚 Directory & Script Index
 
 All utility scripts are organized within the `scripts/` directory following a numerical deployment order:
 
@@ -50,7 +50,7 @@ scripts/
 
 ---
 
-## Module Overview
+## 📝 Module Overview
 
 ### 1. Base Configuration
 
@@ -118,7 +118,7 @@ scripts/
 
 ---
 
-## Getting Started
+## 🚩 Getting Started
 
 ### 1. Repository Setup
 
@@ -156,4 +156,4 @@ sudo ./22-clean-system.sh --dry-run
 ---
 
 > [!WARNING]
-> Always inspect variables (such as target paths, IP ranges, ports, and default usernames) inside individual script headers prior to running on production systems. Test configurations in staging environments beforehand.
+> Always inspect variables (such as target paths, IP ranges, ports, and default usernames) prior to running on production systems. Always test configurations in staging environments before applying for production-destined environments.
