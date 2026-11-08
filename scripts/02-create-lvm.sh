@@ -8,11 +8,6 @@
 
 set -euo pipefail
 
-if [[ "$EUID" -ne 0 ]]; then
-    echo "ERROR: Run script as root or using sudo." >&2
-    exit 1
-fi
-
 if [[ $# -ne 4 ]]; then
     echo "Usage: $0 <disk> <mount_point> <volume_group_name> <logical_volume_name>"
     exit 1
@@ -23,6 +18,11 @@ MOUNT_POINT="$2"
 VG_NAME="$3"
 LV_NAME="$4"
 TARGET="/dev/${VG_NAME}/${LV_NAME}"
+
+if [[ "$EUID" -ne 0 ]]; then
+    echo "ERROR: Run script as root or using sudo." >&2
+    exit 1
+fi
 
 # NVMe / mmcblk style devices
 if [[ "$TARGET_DISK" =~ [0-9]$ ]]; then
