@@ -6,6 +6,11 @@
 
 set -euo pipefail
 
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <username>"
+    exit 1
+fi
+
 if [ "$EUID" -ne 0 ]; then
     echo "ERROR: Please run script as root or with sudo."
     exit 1
